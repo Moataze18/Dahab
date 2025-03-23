@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>محل دهب للحلاقة</title>
+  <title>صالون دهب للحلاقة</title>
   <style>
     * {
       margin: 0;
@@ -99,9 +99,10 @@
   <div class="overlay">
     <div class="container">
       <div class="box" dir="rtl">
-        <h1>محل دهب للحلاقة</h1>
+        <h1>صالون دهب للحلاقة</h1>
         <h2>تأسس سنة 1991</h2>
         <h3>مواعيد العمل: من 12 ظهرًا حتى 10 مساءً</h3>
+        <h4>يتم الغلق في أوقات الصلاة وأجازة يوم الإثنين</h4>
 
         <p class="visitor-counter">
           عدد الزوار في المحل: <span id="arabic-count">0</span>
@@ -119,6 +120,7 @@
         <h1>Dahab Barber Shop</h1>
         <h2>Established in 1991</h2>
         <h3>Working Hours: 12 PM - 10 PM</h3>
+        <h4>Closed during prayer times and on Mondays</h4>
 
         <p class="visitor-counter">
           Visitors in Store: <span id="english-count">0</span>
@@ -151,21 +153,3 @@
       if (customerCount > 0) {
         customerCount--;
         updateCounts();
-      }
-    }
-
-    document.getElementById('admin-login').addEventListener('click', () => {
-      let pass = prompt('Enter Admin Password:');
-      if (pass === '12661') {
-        document.getElementById('arabic-controls').style.display = 'block';
-        document.getElementById('english-controls').style.display = 'block';
-        alert('Admin Access Granted');
-      } else {
-        alert('Wrong Password!');
-      }
-    });
-
-    updateCounts();
-  </script>
-</body>
-</html>
