@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صالون دهتــب للحلاقة</title>
+  <title>صالون دهب للحلاقة</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     
@@ -58,7 +58,6 @@
     p, h3, h4 {
       margin: 10px 0;
     }
-    /* زر تسجيل الدخول للأدمن */
     #admin-login {
       position: absolute;
       top: 5px;
@@ -127,38 +126,52 @@
     </div>
   </div>
 
-  <script>
-    let customerCount = 0;
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
 
-    function updateCounts() {
-      document.getElementById('arabic-count').innerText = customerCount;
-      document.getElementById('english-count').innerText = customerCount;
+  <script>
+    const firebaseConfig = {
+      databaseURL: "https://dahab-1def2-default-rtdb.firebaseio.com/"
+    };
+    
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+    const visitorsRef = database.ref("visitors");
+
+    visitorsRef.on("value", (snapshot) => {
+      const count = snapshot.val();
+      document.getElementById("arabic-count").innerText = count;
+      document.getElementById("english-count").innerText = count;
+      customerCount = count;
+    });
+
+    function updateCountsInFirebase(newCount) {
+      visitorsRef.set(newCount);
     }
 
     function increaseCount() {
       customerCount++;
-      updateCounts();
+      updateCountsInFirebase(customerCount);
     }
 
     function decreaseCount() {
       if (customerCount > 0) {
         customerCount--;
-        updateCounts();
+        updateCountsInFirebase(customerCount);
       }
     }
 
-    document.getElementById('admin-login').addEventListener('click', () => {
-      let pass = prompt('Enter Admin Password:');
-      if (pass === '12661') {
-        document.getElementById('arabic-controls').style.display = 'block';
-        document.getElementById('english-controls').style.display = 'block';
-        alert('Admin Access Granted');
+    document.getElementById("admin-login").addEventListener("click", () => {
+      let pass = prompt("Enter Admin Password:");
+      if (pass === "12661") {
+        document.getElementById("arabic-controls").style.display = "block";
+        document.getElementById("english-controls").style.display = "block";
+        alert("Admin Access Granted");
       } else {
-        alert('Wrong Password!');
+        alert("Wrong Password!");
       }
     });
-
-    updateCounts();
   </script>
 </body>
 </html>
