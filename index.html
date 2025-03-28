@@ -37,10 +37,7 @@
     window.showAdminControls = () => {
       let password = prompt("ادخل كلمة المرور:");
       if (password === "12661") {
-        let adminControls = document.getElementById('admin-controls');
-        adminControls.style.display = 'flex'; 
-        adminControls.style.flexDirection = 'column'; 
-        adminControls.style.alignItems = 'center';
+        document.getElementById('admin-controls').style.display = 'flex'; 
       } else {
         alert("❌ كلمة المرور غير صحيحة!");
       }
@@ -150,6 +147,12 @@
         <h3 style="color: red;">Closed on Monday</h3>
         <p class="visitor-counter">Current Clients: <span id="visitor-count-en">0</span></p>
       </div>
+    </div>
+
+    <div id="admin-controls" class="admin-controls">
+      <button onclick="increaseCount()">➕ زيادة العدد</button>
+      <button onclick="decreaseCount()">➖ تقليل العدد</button>
+      <button onclick="logoutAdmin()">🚪 تسجيل الخروج</button>
     </div>
 
     <div class="vision-mission">
