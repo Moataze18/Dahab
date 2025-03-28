@@ -17,7 +17,6 @@
     const database = getDatabase(app);
     const visitorRef = ref(database, "visitorCount");
 
-    // تحديث العدد عند تحميل الصفحة
     onValue(visitorRef, (snapshot) => {
       let count = snapshot.val() || 0;
       document.getElementById('visitor-count-ar').innerText = count;
@@ -100,28 +99,36 @@
       color: black; 
       border-radius: 5px; 
     }
-    
-    .vision-mission { 
-      width: 90%; 
-      max-width: 800px; 
-      background: rgba(0, 0, 0, 0.7); 
-      padding: 20px; 
-      border-radius: 10px; 
-      border: 2px solid gold; 
-      text-align: center; 
-      margin-top: 20px; 
+
+    /* ✅ شريط متحرك للرؤية والرسالة بنفس ألوان البوكس */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.7); /* نفس لون خلفية البوكس */
+      position: fixed;
+      bottom: 0;
+      padding: 10px 0;
+      border-top: 2px solid gold; /* إضافة إطار علوي باللون الذهبي */
     }
 
-    .vision-mission h1 { font-size: 20px; margin-bottom: 10px; color: gold; }
-    .vision-mission p { font-size: 16px; line-height: 1.5; margin-bottom: 5px; }
+    .marquee {
+      white-space: nowrap;
+      font-size: 18px;
+      font-weight: bold;
+      color: gold; /* نفس لون جملة "صالون دهب للحلاقة" */
+      display: inline-block;
+      animation: marquee-scroll 45s linear infinite;
+    }
 
-    .footer { margin-top: 20px; font-weight: bold; font-size: 16px; }
+    @keyframes marquee-scroll {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
 
     /* ✅ تحسينات للموبايل */
     @media (max-width: 600px) {
       .content { flex-direction: column; align-items: center; }
       .box { width: 90%; }
-      .vision-mission { width: 95%; }
     }
   </style>
 </head>
@@ -154,17 +161,14 @@
       <button onclick="decreaseCount()">➖ تقليل العدد</button>
       <button onclick="logoutAdmin()">🚪 تسجيل الخروج</button>
     </div>
+  </div>
 
-    <div class="vision-mission">
-      <h1>الرؤية | Vision</h1>
-      <p>تقديم تجربة حلاقة تجمع بين البساطة والأصالة</p>
-      <p>Providing a grooming experience that blends simplicity with authenticity</p>
-
-      <h1>الرسالة | Mission</h1>
-      <p>تقديم خدمات حلاقة رجالية بجودة عالية تحافظ على المظهر الكلاسيكي للرجال مع لمسة احترافية</p>
-      <p>Providing high-quality men's grooming services that preserve the classic look with a professional touch</p>
-
-      <div class="footer">تحياتي وتقديري: السعيد محمود | Best Regards: Elsaeed Mahmoud</div>
+  <!-- ✅ شريط متحرك للرؤية والرسالة -->
+  <div class="marquee-container">
+    <div class="marquee">
+      🔶 الرؤية: تقديم تجربة حلاقة تجمع بين البساطة والأصالة | Vision: Providing a grooming experience that blends simplicity with authenticity 🔶 
+      الرسالة: تقديم خدمات حلاقة رجالية بجودة عالية تحافظ على المظهر الكلاسيكي للرجال مع لمسة احترافية | Mission: Providing high-quality men's grooming services that preserve the classic look with a professional touch 🔶
+      مع تحياتى وتقديرى | السعيد محمود | Best Regards | Elsaeed Mahmoud 🔶
     </div>
   </div>
 </body>
