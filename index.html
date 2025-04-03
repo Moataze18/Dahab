@@ -113,7 +113,6 @@
       border-radius: 5px; 
     }
 
-    /* ✅ تصغير الشريط المتحرك */
     .marquee-container {
       width: 100%;
       overflow: hidden;
@@ -180,11 +179,17 @@
         <p class="visitor-counter">Current Clients: <span id="visitor-count-en">0</span></p>
       </div>
     </div>
+
+    <div id="admin-controls" class="admin-controls">
+      <button onclick="increaseCount()">➕ زيادة</button>
+      <button onclick="decreaseCount()">➖ تقليل</button>
+      <button onclick="logoutAdmin()">🚪 تسجيل الخروج</button>
+    </div>
   </div>
 
   <div class="marquee-container">
-    <div class="marquee-arabic">🔶الرسالة: تقديم خدمات حلاقة رجالية بجودة عالية تحافظ على المظهر الكلاسيكى للرجال مع لمسة إحترافية | الرؤية: تقديم تجربة حلاقة تجمع بين البساطة والأصالة | مع تحياتى وتقديرى: السعيد محمود 🔶</div>
-    <div class="marquee-english">🔶Mission: Providing high-quality men's grooming services that preserve the classic look with a professional touch | Vision: Providing a grooming experience that blends simplicity with authenticity | With my regards and appreciation: Elsaeed Mahmoud🔶</div>
+    <div class="marquee-arabic">🔶 الرسالة: تقديم خدمات حلاقة بجودة عالية تحافظ على المظهر الكلاسيكى مع لمسة احترافية | الرؤية: تقديم تجربة حلاقة تجمع بين البساطة والأصالة | مع تحياتى: السعيد محمود 🔶</div>
+    <div class="marquee-english">🔶 Mission: Providing high-quality grooming services with a professional touch | Vision: Offering a grooming experience that blends simplicity with authenticity | Regards: Elsaeed Mahmoud 🔶</div>
   </div>
 </body>
 </html>
