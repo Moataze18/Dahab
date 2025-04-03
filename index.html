@@ -100,36 +100,50 @@
       border-radius: 5px; 
     }
 
-    /* ✅ شريط متحرك للرؤية والرسالة بنفس ألوان البوكس */
+    /* ✅ شريط متحرك منفصل للغة العربية والإنجليزية */
     .marquee-container {
       width: 100%;
       overflow: hidden;
-      background: rgba(0, 0, 0, 0.7); /* نفس لون خلفية البوكس */
+      background: rgba(0, 0, 0, 0.7);
       position: fixed;
       bottom: 0;
       padding: 10px 0;
-      border-top: 2px solid gold; /* إضافة إطار علوي باللون الذهبي */
+      border-top: 2px solid gold;
     }
 
-    .marquee {
+    .marquee-arabic, .marquee-english {
       white-space: nowrap;
       font-size: 18px;
       font-weight: bold;
-      color: gold; /* نفس لون جملة "صالون دهب للحلاقة" */
+      color: gold;
       display: inline-block;
-      animation: marquee-scroll 45s linear infinite;
+      width: 100%;
     }
 
-    @keyframes marquee-scroll {
+    /* العربي يتحرك لليمين */
+    .marquee-arabic {
+      text-align: right;
+      direction: rtl;
+      animation: marquee-right 30s linear infinite;
+    }
+
+    @keyframes marquee-right {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100%); }
+    }
+
+    /* الإنجليزي يتحرك لليسار */
+    .marquee-english {
+      text-align: left;
+      direction: ltr;
+      animation: marquee-left 30s linear infinite;
+    }
+
+    @keyframes marquee-left {
       from { transform: translateX(100%); }
       to { transform: translateX(-100%); }
     }
 
-    /* ✅ تحسينات للموبايل */
-    @media (max-width: 600px) {
-      .content { flex-direction: column; align-items: center; }
-      .box { width: 90%; }
-    }
   </style>
 </head>
 <body>
@@ -163,13 +177,10 @@
     </div>
   </div>
 
-  <!-- ✅ شريط متحرك للرؤية والرسالة -->
+  <!-- ✅ شريط متحرك منفصل للعربية والإنجليزية -->
   <div class="marquee-container">
-    <div class="marquee">
-      🔶 الرؤية: تقديم تجربة حلاقة تجمع بين البساطة والأصالة | Vision: Providing a grooming experience that blends simplicity with authenticity 🔶 
-      الرسالة: تقديم خدمات حلاقة رجالية بجودة عالية تحافظ على المظهر الكلاسيكي للرجال مع لمسة احترافية | Mission: Providing high-quality men's grooming services that preserve the classic look with a professional touch 🔶
-      مع تحياتى وتقديرى | السعيد محمود | Best Regards | Elsaeed Mahmoud 🔶
-    </div>
+    <div class="marquee-arabic">🔶الرسالة: تقديم خدمات حلاقة رجالية بجودة عالية تحافظ على المظهر الكلاسيكى للرجال مع لمسة إحترافية | الرؤية: تقديم تجربة حلاقة تجمع بين البساطة والأصالة | مع تحياتى وتقديرى: السعيد محمود🔶</div>
+    <div class="marquee-english">🔶Mission: Providing high-quality men's grooming services that preserve the classic look with a professional touch | Vision: Providing a grooming experience that blends simplicity with authenticity | With my regards and appreciation: Elsaeed Mahmoud🔶</div>
   </div>
 </body>
 </html>
