@@ -81,8 +81,24 @@
       margin-top: 10px; 
     }
 
-    .admin-controls { display: none; flex-direction: column; align-items: center; margin-top: 10px; }
-    .admin-controls button { font-size: 18px; padding: 10px 15px; cursor: pointer; border: none; background: gold; color: black; border-radius: 5px; margin: 5px; }
+    .admin-controls { 
+      display: none; 
+      flex-direction: column; 
+      align-items: center; 
+      margin-top: 10px;
+      width: 100%;
+    }
+    .admin-controls button { 
+      font-size: 18px; 
+      padding: 10px 15px; 
+      cursor: pointer; 
+      border: none; 
+      background: gold; 
+      color: black; 
+      border-radius: 5px; 
+      margin: 5px; 
+      width: 80%;
+    }
 
     .admin-button { 
       position: absolute; 
@@ -97,27 +113,26 @@
       border-radius: 5px; 
     }
 
-    /* ✅ شريط متحرك منفصل للغة العربية والإنجليزية */
+    /* ✅ تصغير الشريط المتحرك */
     .marquee-container {
       width: 100%;
       overflow: hidden;
       background: rgba(0, 0, 0, 0.7);
       position: fixed;
       bottom: 0;
-      padding: 10px 0;
+      padding: 5px 0;
       border-top: 2px solid gold;
     }
 
     .marquee-arabic, .marquee-english {
       white-space: nowrap;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: bold;
       color: gold;
       display: inline-block;
       width: 100%;
     }
 
-    /* العربي يتحرك لليمين */
     .marquee-arabic {
       text-align: right;
       direction: rtl;
@@ -129,7 +144,6 @@
       to { transform: translateX(100%); }
     }
 
-    /* الإنجليزي يتحرك لليسار */
     .marquee-english {
       text-align: left;
       direction: ltr;
@@ -169,8 +183,8 @@
   </div>
 
   <div class="marquee-container">
-    <div class="marquee-arabic">🔶الرسالة: تقديم خدمات حلاقة بجودة عالية تحافظ على المظهر الكلاسيكى | الرؤية: تقديم تجربة تجمع بين البساطة والأصالة | تحياتى: السعيد محمود🔶</div>
-    <div class="marquee-english">🔶Mission: Providing high-quality grooming services | Vision: Offering a simple yet authentic experience | Regards: Elsaeed Mahmoud🔶</div>
+    <div class="marquee-arabic">🔶الرسالة: تقديم خدمات حلاقة رجالية بجودة عالية تحافظ على المظهر الكلاسيكى للرجال مع لمسة إحترافية | الرؤية: تقديم تجربة حلاقة تجمع بين البساطة والأصالة | مع تحياتى وتقديرى: السعيد محمود 🔶</div>
+    <div class="marquee-english">🔶Mission: Providing high-quality men's grooming services that preserve the classic look with a professional touch | Vision: Providing a grooming experience that blends simplicity with authenticity | With my regards and appreciation: Elsaeed Mahmoud🔶</div>
   </div>
 </body>
 </html>
