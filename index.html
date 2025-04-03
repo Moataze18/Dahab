@@ -50,7 +50,7 @@
   </script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
     body { color: white; background: url('background.jpg') no-repeat center center fixed; background-size: cover; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
     .overlay { background: rgba(0, 0, 0, 0.6); width: 100%; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
@@ -59,40 +59,37 @@
     
     .box { 
       background: rgba(0, 0, 0, 0.7); 
-      padding: 15px; 
+      padding: 20px; 
       border-radius: 10px; 
       text-align: center; 
       border: 2px solid gold; 
-      width: 48%; 
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center; 
+      width: 100%; 
+      max-width: 400px;
     }
 
-    .box h1 { color: gold; font-size: 22px; margin-bottom: 5px; }
-    .box h2, .box h3 { font-size: 18px; margin-bottom: 5px; }
+    .box h1 { color: gold; font-size: 24px; margin-bottom: 5px; font-weight: bold; }
+    .box h2, .box h3 { font-size: 20px; margin-bottom: 5px; font-weight: bold; }
 
     .visitor-counter { 
-      font-size: 22px; 
+      font-size: 24px; 
       font-weight: bold; 
       background: rgba(255, 215, 0, 0.9); 
       color: black; 
-      padding: 10px; 
+      padding: 12px; 
       border-radius: 10px; 
       display: inline-block; 
       margin-top: 10px; 
     }
 
     .admin-controls { display: none; flex-direction: column; align-items: center; margin-top: 10px; }
-    .admin-controls button { font-size: 16px; padding: 8px 15px; cursor: pointer; border: none; background: gold; color: black; border-radius: 5px; margin: 5px; }
+    .admin-controls button { font-size: 18px; padding: 10px 15px; cursor: pointer; border: none; background: gold; color: black; border-radius: 5px; margin: 5px; }
 
     .admin-button { 
       position: absolute; 
       top: 10px; 
       left: 10px; 
-      font-size: 14px; 
-      padding: 5px 10px; 
+      font-size: 16px; 
+      padding: 8px 12px; 
       cursor: pointer; 
       border: none; 
       background: rgba(255, 255, 255, 0.5); 
@@ -113,7 +110,7 @@
 
     .marquee-arabic, .marquee-english {
       white-space: nowrap;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       color: gold;
       display: inline-block;
@@ -169,18 +166,11 @@
         <p class="visitor-counter">Current Clients: <span id="visitor-count-en">0</span></p>
       </div>
     </div>
-
-    <div id="admin-controls" class="admin-controls">
-      <button onclick="increaseCount()">➕ زيادة العدد</button>
-      <button onclick="decreaseCount()">➖ تقليل العدد</button>
-      <button onclick="logoutAdmin()">🚪 تسجيل الخروج</button>
-    </div>
   </div>
 
-  <!-- ✅ شريط متحرك منفصل للعربية والإنجليزية -->
   <div class="marquee-container">
-    <div class="marquee-arabic">🔶الرسالة: تقديم خدمات حلاقة رجالية بجودة عالية تحافظ على المظهر الكلاسيكى للرجال مع لمسة إحترافية | الرؤية: تقديم تجربة حلاقة تجمع بين البساطة والأصالة | مع تحياتى وتقديرى: السعيد محمود🔶</div>
-    <div class="marquee-english">🔶Mission: Providing high-quality men's grooming services that preserve the classic look with a professional touch | Vision: Providing a grooming experience that blends simplicity with authenticity | With my regards and appreciation: Elsaeed Mahmoud🔶</div>
+    <div class="marquee-arabic">🔶الرسالة: تقديم خدمات حلاقة بجودة عالية تحافظ على المظهر الكلاسيكى | الرؤية: تقديم تجربة تجمع بين البساطة والأصالة | تحياتى: السعيد محمود🔶</div>
+    <div class="marquee-english">🔶Mission: Providing high-quality grooming services | Vision: Offering a simple yet authentic experience | Regards: Elsaeed Mahmoud🔶</div>
   </div>
 </body>
 </html>
